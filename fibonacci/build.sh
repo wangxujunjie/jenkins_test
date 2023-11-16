@@ -1,1 +1,1 @@
-g++ /src/fib2.cpp -o fib2  
+g++ ./src/fib2.cpp -o fib2  
