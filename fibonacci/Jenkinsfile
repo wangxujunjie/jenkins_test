@@ -7,15 +7,16 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        // 这里的hello2 是我加的，就是说明，这是stages下的第二个任务 ,就是在pipeline中加单行注释 用 // 就行
-        stage('PWD') {
-            steps {
-                sh 'pwd'
-            }
-        }
 	stage('Build'){
 	    steps {
-	    dir('/var/lib/jenkins/workspace/wxjj_Jenkinsfile-test/fibonacci') {
+	    	script {
+                    // 获取当前目录位置并保存到变量中
+                    def currentDir = pwd()
+                    
+                    // 打印当前目录位置
+                    echo "Current Directory: ${currentDir}"
+                    
+		    dir('${currentDir}/fibonacci') {
                     // 在指定目录中执行脚本
                     sh './build.sh'
                 }
