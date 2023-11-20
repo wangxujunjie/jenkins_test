@@ -8,13 +8,14 @@ pipeline {
             }
         }
         // 这里的hello2 是我加的，就是说明，这是stages下的第二个任务 ,就是在pipeline中加单行注释 用 // 就行
-        stage('Hello2') {
+        stage('PWD') {
             steps {
                 sh 'pwd'
             }
         }
 	stage('Build'){
           steps {
+	    sh 'cd fibonacci'
             sh 'bash ./build.sh'
           }
 	}	
