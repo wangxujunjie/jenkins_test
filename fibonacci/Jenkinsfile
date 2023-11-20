@@ -14,9 +14,12 @@ pipeline {
             }
         }
 	stage('Build'){
-          steps {
-            sh './fibonacci/build.sh'
-          }
+	    steps {
+	    dir('/var/lib/jenkins/workspace/wxjj_Jenkinsfile-test/fibonacci') {
+                    // 在指定目录中执行脚本
+                    sh './build.sh'
+                }
+	    }
 	}	
     }
 }
