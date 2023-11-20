@@ -15,9 +15,7 @@ pipeline {
         }
 	stage('Build'){
           steps {
-	    sh 'cd fibonacci'
-	    sh 'pwd'
-            sh './build.sh'
+            sh './fibonacci/build.sh'
           }
 	}	
     }
