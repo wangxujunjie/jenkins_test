@@ -19,8 +19,9 @@ pipeline {
 		    dir('${currentDir}/fibonacci') {
                     // 在指定目录中执行脚本
                     sh './build.sh'
-                }
-	    }
-	}	
+               	    }
+	   	 }
+	     }	
+         }
     }
 }
