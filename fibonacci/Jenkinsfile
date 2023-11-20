@@ -1,0 +1,32 @@
+pipeline {
+    agent { 
+      node {
+        label 'wxjj_linux-1'
+      }	
+    } 	
+	
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        // 这里的hello2 是我加的，就是说明，这是stages下的第二个任务 ,就是在pipeline中加单行注释 用 // 就行
+        stage('Hello2') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+	stage('Build'){
+	  when {
+           anyOf {
+            branch 'master'
+            branch 'release*'
+            }
+          }
+          steps {
+            sh 'bash ./build.sh'
+          }
+	}	
+    }
+}
