@@ -16,7 +16,7 @@ pipeline {
                     // 打印当前目录位置
                     echo "Current Directory: ${currentDir}"
                     
-		    dir('${currentDir}/fibonacci') {
+		    dir('${./fibonacci') {
                     // 在指定目录中执行脚本
                     sh './build.sh'
                	    }
