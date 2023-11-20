@@ -15,7 +15,7 @@ pipeline {
         }
 	stage('Build'){
           steps {
-            sh 'bash sudo ./build.sh'
+            sh 'bash ./build.sh'
           }
 	}	
     }
